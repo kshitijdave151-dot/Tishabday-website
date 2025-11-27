@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday</title>
+</head>
+   <body style="background: linear-gradient(to right, #ff9a9e, #fad0c4); text-align:center; font-family: Arial, sans-serif;">
+
+    <h1 style="font-size:35px; margin-top:40px;">🎂✨ Happy Birthday Tishii!! ✨🎂</h1>
+
+    <p style="font-size:20px; margin:20px;">
+        I feel really very lucky to have such an amazing person like you in my life 🥰  
+        I hope your day is filled with happiness just like you fill mine 💗
+    </p>
+
+    <button onclick="showMessage()" style="padding:12px 24px; font-size:18px; border:none; border-radius:10px; background:#ff4f70; color:white; cursor:pointer;">
+        Click for Surprise 🎁
+    </button>
+
+    <p id="surprise" style="display:none; font-size:22px; margin-top:20px;">💖 I Love You So Much 💖</p>
+
+    <script>
+        function showMessage(){
+            document.getElementById('surprise').style.display = 'block';
+        }
+    </script>
+<div id="slideshow" style="width:90%; margin:auto;">
+    <img id="slide" style="width:100%; border-radius:15px; box-shadow:0 0 20px rgba(0,0,0,0.4);">
+</div>
+
+<script>
+let index = 1;
+function changeImage(){
+    document.getElementById("slide").src = "images/" + index + ".jpg";
+    index++;
+    if(index > 5) index = 1;  // Change 5 to number of pictures you have
+}
+setInterval(changeImage, 3000); // change image every 3 seconds
+changeImage(); // first call
+</script>
+<script>
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "absolute";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random()*30 + 20) + "px";
+    heart.style.animation = "floatUp 4s linear forwards";
+    document.body.appendChild(heart);
+
+    setTimeout(()=> heart.remove(),4000);
+}, 300);
+
+</script>
+
+<style>
+@keyframes floatUp {
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+
+</body>
+</html>
